@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    
+      <div class="weather__wrapper">
+
+          <div class="weather__search">
+            <input class="input-search" type="text" placeholder="Aktobe">
+            <button class="btn-search"> <img src="/img/logo-search.svg" alt="Search"></button>
+          </div>
+
+          <div class="info-block">
+
+            <div class="tabs">
+                    <div id="tab_now" class="tabs__block block-1">
+                        <p class="temperature">14<span>&#176;</span></p>
+                        <img class="icon-weather" src="/img/icon-cloud.svg" alt="Cloud">
+                        
+                        <div class="now-bottom">
+                            <h2 class="now-location">Aktobe</h2>
+                            <img class="icon-favour" src="/img/icon-shape.svg" alt="Favorites">
+                        </div>
+                    </div>
+
+                    <div id="tab_details" class="tabs__block block-2">
+                        <h2 class="details-location">Aktobe</h2>
+                        <ul class="details-list">
+                            <li class="list-elem">Temperature: 14<span>&#176;</span></li>
+                            <li class="list-elem">Feels like: 10<span>&#176;</span></li>
+                            <li class="list-elem">Weather: clouds</li>
+                            <li class="list-elem">Sunrise: 03:21</li>
+                            <li class="list-elem">Sunset: 18:54</li>
+                        </ul>
+                    </div>
+                    
+                    <div id="tab_forecast" class="tabs__block block-3">
+                       
+                    </div>
+                    
+                   <div class="tabs__item">
+                      <a href="#tab_now" class="tab tab-now">Now</a>
+                      <a href="#tab_details" class="tab tab-details">Details</a>
+                      <a href="#tab_forecast" class="tab tab-forecast">Forecast</a>
+                   </div>
+                
+
+                
+            </div>
+
+            <div class="weather__locations">
+                <div class="added-locations"> 
+                    <h2>Added location: </h2>
+                </div>
+                <div class="list-locations">
+                    <p class="loc-elem">Amur</p>
+                    <p class="loc-elem">Samara</p>
+                    <p class="loc-elem">Bali</p>
+                    <p class="loc-elem">Dane</p>
+                    <p class="loc-elem">Kilo</p>
+                    <p class="loc-elem">Nur-sultan</p>
+                </div>
+          </div>
+           </div>
+      </div>
+
+
+</body>
+</html>
