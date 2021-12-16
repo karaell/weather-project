@@ -11,7 +11,7 @@ UI.FORM_SEARCH.addEventListener('submit', function () {
     .then(res => {
         console.log(res)
         UI.LOCATION_NAME.textContent = `${res.name}`;
-        UI.LOCATION_TEMPERATURE.textContent = `${res.main.temp + '°'}`;
+        UI.LOCATION_TEMPERATURE.textContent = `${Math.round(res.main.temp) + '°'}`;
     })
     UI.INPUT_SEARCH.value = '';
 })
