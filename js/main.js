@@ -1,12 +1,10 @@
 import {UI} from './view.js'
 
-UI.BTN_SEARCH.addEventListener('submit', function () {
+UI.FORM_SEARCH.addEventListener('submit', function () {
     const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
     const cityName = UI.INPUT_SEARCH.value;
     const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
     const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
-
-
 	
   fetch(url)
   	.then(result =>  result.json() )
@@ -17,6 +15,4 @@ UI.BTN_SEARCH.addEventListener('submit', function () {
     })
     UI.INPUT_SEARCH.value = ""
 
-  
-  
 })
