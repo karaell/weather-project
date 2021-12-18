@@ -1,15 +1,11 @@
 import {UI} from './view.js'
 
-let array = []
-
 UI.FORM_SEARCH.addEventListener('submit', showInfoNow)
 function showInfoNow () {
   const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const cityName = UI.INPUT_SEARCH.value;
   const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
-  
-  UI.INPUT_SEARCH.value = ''
 
   fetch(url)
   	.then(result =>  result.json() )
@@ -24,21 +20,28 @@ function showInfoNow () {
 
       UI.BTN_FAVOUR.addEventListener('click', addFavour);
 
-      UI.INPUT_SEARCH.value.replace();
+      UI.FORM_SEARCH.reset()
     })
     .catch (error => {
       alert(error);
-      UI.INPUT_SEARCH.value.replace();
+      UI.FORM_SEARCH.reset()
     })
   
 }
 
+function isCitySaved () {
+  const LOC_LIST = document.querySelector(".list-locations");
+  const isLocationSaved = LOC_LIST.textContent.includes(UI.LOCATION_NAME.textContent);
+
+  if (isLocationSaved) {
+    alert ("Location already saved");
+  }
+}
+
 function addFavour () {
-  /* const cityName = UI.LOCATION_NAME.textContent;
-  console.log (array)
-  console.log(cityName)
-  console.log(array.includes(cityName))
-  if (array.includes(cityName)) alert ("Location already added"); */
+  isCitySaved();
+
+
 
   const DIV_FAVOUR = document.createElement('div');
   DIV_FAVOUR.className = 'favour_elem';
@@ -47,8 +50,6 @@ function addFavour () {
   <button class="btn-delete"> <img src="./img/delete-icon.svg" alt="Delete icon"> </button>
   `
   UI.DIV_LIST.append(DIV_FAVOUR);
-  
-  array.push(DIV_FAVOUR.querySelector('.loc-elem').textContent);
 
   DIV_FAVOUR.querySelector('.btn-delete').addEventListener('click', deleteFavour);
   DIV_FAVOUR.querySelector('.loc-elem').addEventListener('click', function () {
@@ -56,7 +57,6 @@ function addFavour () {
     showInfoNow ();
  }) 
 }
-console.log(array)
 
 function deleteFavour () {
   this.parentElement.remove();
