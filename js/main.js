@@ -2,7 +2,7 @@ import {UI} from './view.js'
 
 UI.FORM_SEARCH.addEventListener('submit', showInfoNow)
 function showInfoNow () {
-  const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
+  const serverUrl = 'https://api.openweathermap.org/data/2.5/weather';
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const cityName = UI.INPUT_SEARCH.value;
   const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`; 
