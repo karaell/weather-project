@@ -6,4 +6,5 @@ export const UI = {
     BTN_FAVOUR: document.querySelector(".btn-favour"),
     BTNS_DELETE: document.querySelectorAll(".btn-delete"),
     FAVOURED_CITY: document.querySelectorAll('.loc-elem'),
+    DIV_LIST: document.querySelector(".list-locations"),
 }
