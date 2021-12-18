@@ -147,12 +147,12 @@ h2 {
 .icon-favour{
   margin-right: 26px;
   cursor: pointer;
-  stroke-width: 10px;
 }
 
-.favoured {
-  background-color: blue;
+.city-saved {
+  fill: black;
 }
+
 
                                                               /* details-block */
 
