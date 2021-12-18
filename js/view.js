@@ -3,5 +3,7 @@ export const UI = {
 	INPUT_SEARCH: document.querySelector(".input-search"),
     LOCATION_NAME: document.querySelector(".now-location"),
     LOCATION_TEMPERATURE: document.querySelector(".temperature"),
-    WEATHER_ICON: document.querySelector(".icon-weather"),
+    BTN_FAVOUR: document.querySelector(".btn-favour"),
+    BTNS_DELETE: document.querySelectorAll(".btn-delete"),
+    FAVOURED_CITY: document.querySelectorAll('.loc-elem'),
 }

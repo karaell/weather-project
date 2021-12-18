@@ -144,9 +144,14 @@ h2 {
     margin-left: 12px;
 }
 
-.icon-favour {
+.icon-favour{
   margin-right: 26px;
   cursor: pointer;
+  stroke-width: 10px;
+}
+
+.favoured {
+  background-color: blue;
 }
 
                                                               /* details-block */
@@ -180,11 +185,21 @@ h2 {
 .list-locations {
   padding-top: 35px;
   padding-left: 18px;
+  padding-right: 18px;
   text-transform: capitalize;
+}
+
+.favour_elem {
+  display: flex;
+  justify-content: space-between;
 }
 
 .loc-elem {
   margin-bottom: 14px;
+  cursor: pointer;
+}
+
+.btn-delete {
   cursor: pointer;
 }
                           
