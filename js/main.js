@@ -5,7 +5,7 @@ function showInfoNow () {
   const serverUrl = 'http://api.openweathermap.org/data/2.5/weather';
   const apiKey = 'f660a2fb1e4bad108d6160b7f58c555f';
   const cityName = UI.INPUT_SEARCH.value;
-  const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`;
+  const url = `${serverUrl}?q=${cityName}&appid=${apiKey}&units=metric`; 
 
   fetch(url)
   	.then(result =>  result.json() )
@@ -29,19 +29,13 @@ function showInfoNow () {
   
 }
 
-function isCitySaved () {
-  const LOC_LIST = document.querySelector(".list-locations");
-  const isLocationSaved = LOC_LIST.textContent.includes(UI.LOCATION_NAME.textContent);
+function addFavour () {
 
+  const isLocationSaved = document.querySelector(".list-locations").textContent.includes(UI.LOCATION_NAME.textContent);
   if (isLocationSaved) {
     alert ("Location already saved");
+    return;
   }
-}
-
-function addFavour () {
-  isCitySaved();
-
-
 
   const DIV_FAVOUR = document.createElement('div');
   DIV_FAVOUR.className = 'favour_elem';
@@ -55,7 +49,7 @@ function addFavour () {
   DIV_FAVOUR.querySelector('.loc-elem').addEventListener('click', function () {
     UI.INPUT_SEARCH.value = this.textContent;
     showInfoNow ();
- }) 
+  }) 
 }
 
 function deleteFavour () {
