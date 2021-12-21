@@ -1,9 +1,6 @@
 import { UI, NOW, DETAILS } from './view.js';
 import { storage } from  './storage.js'
 
-let favorite_list = [];
-storage.setFavoritesToStorage(favorite_list)
-
 const URL = {
   SERVER: 'http://api.openweathermap.org/data/2.5/weather',
   API_KEY: 'f660a2fb1e4bad108d6160b7f58c555f',
@@ -61,14 +58,20 @@ function addFavour () {
   storage.setFavoritesToStorage(favorite_list); */
 
 
-  const array = storage.getFavoritesFromStorage()
+  let array = storage.getFavoritesFromStorage()
+  if (array === null) array = [];
+  
+  const currentCity = NOW.LOCATION_NAME.textContent;
+
+  const check = array.indexOf(currentCity)
+  console.log(check)
+  if (check < 0) array.push(currentCity)
   console.log(array)
- 
-  const check = array.indexOf(UI.LOCATION_NAME.textContent)
-  if (check === -1) array.push(UI.LOCATION_NAME.textContent)
+
+  UI.DIV_LIST.innerHTML = '';
 
   array.forEach(item => {
-    console.log(item)
+    // console.log(item)
     const DIV_FAVORITE = document.createElement('div');  
     DIV_FAVORITE.className = 'favour_elem';
     DIV_FAVORITE.innerHTML = `
@@ -84,7 +87,7 @@ function addFavour () {
   }) 
   })
 
-  storage.setFavoritesToStorage(favorite_list);
+  storage.setFavoritesToStorage(array);
 
 
 
