@@ -9,6 +9,7 @@ export const UI = {
 export const NOW = {
     LOCATION_NAME: document.querySelector(".now-location"),
     LOCATION_TEMPERATURE: document.querySelector(".temperature"),
+    ICON_WEATHER: document.querySelector(".icon-weather-img"),
 }
 
 export const DETAILS = {
@@ -20,3 +21,13 @@ export const DETAILS = {
     SUNSET: document.querySelector(".details-sunset"),
 
 }
+
+/* export const FORECASTS = {
+    LOCATION: document.querySelector(".forecast-location"),
+    DATE: document.querySelector(`.date-block-${i}`),
+    TEMPERATURE: document.querySelector(`.temp-block-${i}`),
+    FEELS_LIKE: document.querySelector(`.feelslike-block-${i}`),
+    TIME: document.querySelector(`.time-block-${i}`),
+    WEATHER: document.querySelector(`.weather-block-${i}`),
+    ICON: document.querySelector(`.icon-block-${i}`),
+  } */
